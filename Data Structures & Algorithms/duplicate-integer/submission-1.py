@@ -1,7 +1,7 @@
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
         size = len(nums) + 1
-        hash_table = [[] for i in range(size)]
+        hash_table = [[] for _ in range(size)]
 
         for n in nums:
             index = n % size
@@ -10,9 +10,7 @@ class Solution:
             for value in bucket:
                 if value == n:
                     return True
-            
-            bucket.append(n)
-        
-        return False
 
-        
+            bucket.append(n)
+
+        return False
