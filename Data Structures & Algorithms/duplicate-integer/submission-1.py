@@ -1,16 +1,8 @@
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        size = len(nums) + 1
-        hash_table = [[] for _ in range(size)]
-
+        seen = set()
         for n in nums:
-            index = n % size
-            bucket = hash_table[index]
-
-            for value in bucket:
-                if value == n:
-                    return True
-
-            bucket.append(n)
-
+            if n in seen:
+                return True
+            seen.add(n)
         return False
