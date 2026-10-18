@@ -1,6 +1,6 @@
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        size = 2 * len(nums) + 1
+        size = len(nums) + 1
         hash_table = [[] for _ in range(size)]
 
         for n in nums:
